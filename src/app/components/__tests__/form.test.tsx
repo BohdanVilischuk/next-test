@@ -29,8 +29,8 @@ describe('Form Component', () => {
 
   it('renders correctly with all fields', () => {
     render(<Form />);
-    expect(screen.getByPlaceholderText('Card title')).toBeInTheDocument();
-    expect(screen.getByPlaceholderText('Card description')).toBeInTheDocument();
+    expect(screen.getByPlaceholderText('Enter card title')).toBeInTheDocument();
+    expect(screen.getByPlaceholderText('Enter card description')).toBeInTheDocument();
   });
 
   it('displays validation errors', async () => {
