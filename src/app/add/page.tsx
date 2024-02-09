@@ -1,6 +1,6 @@
 "use client"
 import React, { FC } from 'react';
-import Form from '../components/form';
+import Form from '../components/form-components/form';
 import { useAuthStore } from '../store/useAuthStore';
 
 const AddPage: FC = () => {
