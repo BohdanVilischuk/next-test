@@ -4,7 +4,7 @@ import {
   Button,
 } from "@chakra-ui/react";
 import React, { FC } from "react";
-import { useAuthStore } from "../store/useAuthStore";
+import { useAuthStore } from "@/app/store/useAuthStore";
 import { useRouter } from "next/navigation";
 
 

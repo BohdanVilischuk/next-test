@@ -1,16 +1,17 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { formSchema } from "../../schemas/form-schema";
+import { formSchema } from "@/app/schemas/form-schema";
 import { Box, Input, useToast } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
-import useCardStore from "../../store/useCardStore";
-import { ICard } from "../../types/card";
-import React from "react";
-import { IFormData } from "../../types/form";
-import { FormFieldsEnum } from "../../constants/form";
+import useCardStore from "@/app/store/useCardStore";
+import { ICard } from "@/app/types/card";
+import React, { FC } from "react";
+import { IFormData } from "@/app/types/form";
+import { FormFieldsEnum } from "@/app/constants/form";
 import {FormField}  from "./form-field"; 
+import { ToastStatusesEnum, ToastMessagesEnum, ToastTitlesEnum } from "@/app/constants/statuses";
 
-const Form = () => {
+const Form: FC = () => {
   const {
     register,
     handleSubmit,
@@ -32,10 +33,10 @@ const Form = () => {
 
     addCard(card);
     toast({
-      title: "Element added",
-      description: "You've successfully added a new element.",
-      status: "success",
-      duration: 5000,
+      title: ToastTitlesEnum.CARD_TITLE,
+      description: ToastMessagesEnum.CARD_SUCCESS,
+      status: ToastStatusesEnum.SUCCESS,
+      duration: 3000,
       isClosable: true,
     });
     reset();
